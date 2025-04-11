@@ -1,0 +1,151 @@
+.header__container {
+  background-color: #1a1a1b;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+  height: 70px;
+  font-family: sans-serif;
+}
+.fixed{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav p {
+  margin-bottom: 0 !important;
+}
+.logo__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px;
+}
+.logo__container img {
+  width: 80%;
+  padding-top: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.delivery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: bold;
+  padding: 5px;
+  color: #fff;
+}
+.delivery p {
+  font-size: 11px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  flex: 1;
+}
+.search select,
+.search input {
+  padding: 8.3px;
+  font-weight: bold;
+  outline: 1px solid #fff;
+}
+.search select {
+  border: none;
+  padding: 12.1px;
+}
+.search input {
+  border: 1px solid #fff;
+  width: 100%;
+  margin-right: -2px;
+}
+.search svg {
+  padding: 7px;
+  background-color: var(--primary-color);
+  color: #1a1a1b;
+}
+.search svg:hover {
+  background-color: var(--primary-shade);
+  cursor: pointer;
+}
+.search:focus-within {
+  border: 2px solid #eba1af;
+}
+.order__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+  gap: 10px;
+}
+.order__container p {
+  font-size: 10px;
+  font-weight: bold;
+}
+.order__container a {
+  text-decoration: none;
+  color: #fff;
+}
+.language {
+  width: 100px;
+  display: flex;
+  padding: 10px;
+}
+.language select {
+  background-color: #1a1a1b;
+  border: none;
+  color: #fff;
+}
+.language img {
+  width: 40%;
+}
+.cart {
+  padding: relative;
+}
+.cart span {
+  position: absolute;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-left: -21px;
+  font-size: 20px;
+  background-color: #1a1a1b;
+  color: var(--primary-color);
+}
+.order__container a:hover,
+.delivery:hover {
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+.lower__container {
+  background-color: #232f3e;
+  color: #fff;
+}
+.lower__container ul {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  margin-bottom: 0;
+}
+.lower__container ul li {
+  padding: 8px;
+}
+.lower__container ul li:first-child {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  .header__container {
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+  }
+  .lower__container ul li:not(:first-child) {
+    display: none;
+  }
+}
