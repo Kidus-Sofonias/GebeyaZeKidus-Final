@@ -19,7 +19,6 @@ function Header() {
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     localStorage.setItem("i18nextLng", lang);
-    //console.log(`Language changed to: ${lang}`);
   };
 
   const totalItem =
@@ -29,10 +28,7 @@ function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = async () => {
-    if (!searchQuery.trim()) {
-      //console.log("Search query is empty.");
-      return;
-    }
+    if (!searchQuery.trim()) return;
 
     try {
       const response = await fetch(
@@ -59,11 +55,9 @@ function Header() {
         const productMatch = results.find((item) => item.type === "product");
 
         if (categoryMatch) {
-          navigate(`/category/${categoryMatch.name.toLowerCase()}`); // Normalize to lowercase
+          navigate(`/category/${categoryMatch.name.toLowerCase()}`);
         } else if (productMatch) {
           navigate(`/products/${productMatch.id}`);
-        } else {
-          //console.log("No suitable match found.");
         }
       } else {
         console.error("Unexpected response format. Expected JSON.");
@@ -148,10 +142,16 @@ function Header() {
           </div>
         </div>
         <div className={styles.language}>
-          <select onChange={(e) => changeLanguage(e.target.value)}>
+          <select
+            onChange={(e) => changeLanguage(e.target.value)}
+            defaultValue={i18n.language}
+          >
             <option value="en">English</option>
             <option value="am">አማርኛ</option>
             <option value="fr">Français</option>
+            <option value="om">Af.Oromoo</option>
+            <option value="es">Español</option>
+            <option value="zh">中文</option>
           </select>
         </div>
       </div>
