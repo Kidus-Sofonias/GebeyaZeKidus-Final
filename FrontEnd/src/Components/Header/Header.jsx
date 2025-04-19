@@ -124,14 +124,14 @@ function Header() {
                 ) : (
                   <>
                     <p>{t("hello")}</p>
-                    <span>{t("accountLists")}</span>
+                    <span>{t("account")}</span>
                   </>
                 )}
               </div>
             </Link>
             <Link to="/orders">
               <div>
-                <p>{t("returns")}</p>
+                {/* <p>{t("returns")}</p> */}
                 <span>{t("orders")}</span>
               </div>
             </Link>
@@ -139,20 +139,20 @@ function Header() {
               <BiCart size={35} />
               <span>{totalItem}</span>
             </Link>
+            <div className={styles.language}>
+              <select
+                onChange={(e) => changeLanguage(e.target.value)}
+                defaultValue={i18n.language}
+              >
+                <option value="en">English</option>
+                <option value="am">አማርኛ</option>
+                <option value="fr">Français</option>
+                <option value="om">Af.Oromo</option>
+                <option value="es">Español</option>
+                <option value="zh">中文</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div className={styles.language}>
-          <select
-            onChange={(e) => changeLanguage(e.target.value)}
-            defaultValue={i18n.language}
-          >
-            <option value="en">English</option>
-            <option value="am">አማርኛ</option>
-            <option value="fr">Français</option>
-            <option value="om">Af.Oromoo</option>
-            <option value="es">Español</option>
-            <option value="zh">中文</option>
-          </select>
         </div>
       </div>
     </nav>

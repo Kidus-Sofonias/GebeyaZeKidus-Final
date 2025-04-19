@@ -15,7 +15,7 @@ function CarouselEffect() {
         showArrows={true}
       >
         {carouselImg.map((img) => {
-          return <img key={img} src={img} alt="image-of-item" />;
+          return <img key={img} src={img} className={styles.image} alt="image-of-item" />;
         })}
       </Carousel>
       <div className={styles.hero__img}></div>
