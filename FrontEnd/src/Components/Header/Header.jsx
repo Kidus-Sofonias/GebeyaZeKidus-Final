@@ -32,7 +32,7 @@ function Header() {
 
     try {
       const response = await fetch(
-        `https://gebayazekidus.onrender.com/api/search?query=${encodeURIComponent(
+        `http://35.176.151.83:5000//api/search?query=${encodeURIComponent(
           searchQuery
         )}`
       );
